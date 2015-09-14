@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>2048kg</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- FB og meta -->
+<meta content='images/fbs-470x236-home.jpg' itemprop='image' property='og:image' />
+<meta property="og:site_name" content="2048KG">
+<meta property="og:title" content="2048KG Game Center">
+<meta property="og:description" content=" ">
+	
+<link rel="stylesheet" href="../css/common.css"> 
+<link rel="stylesheet" href="../css/main.css">
+
+</head>
+<body>
+	<header>
+		<a href="javascript:window.history.go(-1)" class="iconfont i-back">&#xe61d;</a>
+		<h1>Setting</h1>
+		<a href="index.html" class="iconfont i-home">&#xe61e;</a>
+	</header>
+	<section>
+		<form>
+			<div class="photo-edit">
+				<div class="photo" id="photoUpdate">
+					<img src="../images/user_temp.jpg">
+					<i class="iconfont">&#xe609;</i>
+					<i class="arrow-up" id="arrowUp"></i>
+				</div>
+				<div class="photo-package" id="photoBackage">
+					<ul class="clearfix">
+						<li>
+							<img src="../images/photo/temp1.jpg">
+						</li>
+						<li>
+							<img src="../images/photo/temp2.jpg">
+						</li>
+						<li>
+							<img src="../images/photo/temp3.jpg">
+						</li>
+						<li>
+							<img src="../images/photo/temp4.jpg">
+						</li>
+						<li>
+							<img src="../images/photo/temp5.jpg">
+						</li>
+						<li>
+							<img src="../images/photo/temp6.jpg">
+						</li>
+						<li>
+							<img src="../images/photo/temp7.jpg">
+						</li>
+						<li>
+							<img src="../images/photo/temp8.jpg">
+						</li>
+						<li>
+							<img src="../images/photo/temp9.jpg">
+						</li>
+						<li>
+							<img src="../images/photo/temp10.jpg">
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="account-form-wrap">
+				<div class="txt">Username:</div>
+				<div class="val">
+					<input type="text" class="input-gray" placeholder="player name" />
+				</div>
+				<div class="txt">Password:</div>
+				<div class="val">
+					<input type="password" class="input-gray" placeholder="if no change , leave it back" />
+				</div>
+				<div class="txt">Email:</div>
+				<div class="val">
+					<input type="text" class="input-gray" placeholder="llzhangzll@gmail.com" />
+				</div>
+				<div class="val">
+					<input type="submit" value="Submit" class="btn btn-middle" />
+				</div>
+			</div>
+		</form>
+	</section>
+	<footer class="fixed-footer">
+		<div class="copyright">Copyright&copy;2015 <span class="website">2048kg.com</span> </div>
+	</footer>
+
+<script src="../scripts/jquery-1.9.1.min.js"></script> 
+<script>
+$(function(){
+	$('#photoUpdate').on('click',function(){
+		var h = $('#photoBackage').children('ul').height();
+		$('#photoBackage').show().css({
+			'margin-top':'10px',
+			'height':h
+		});
+		$('#arrowUp').show()
+		$('#photoBackage').find('li').on('click',function(){
+			$(this).addClass('active')
+				.siblings().removeClass('active')
+		})
+		$('footer').removeClass('fixed-footer')
+
+	})
+})
+
+</script>
+</body>
+</html>
